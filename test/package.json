@@ -1,0 +1,11 @@
+{
+  "name": "test",
+  "packageManager": "yarn@3.5.1",
+  "type": "module",
+  "scripts": {
+    "start": "node --preserve-symlinks ."
+  },
+  "dependencies": {
+    "discord.rs": "file:.."
+  }
+}

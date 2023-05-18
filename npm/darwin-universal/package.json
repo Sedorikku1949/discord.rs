@@ -1,0 +1,15 @@
+{
+  "name": "discord.rs-darwin-universal",
+  "version": "0.0.0",
+  "os": [
+    "darwin"
+  ],
+  "main": "discord.rs.darwin-universal.node",
+  "files": [
+    "discord.rs.darwin-universal.node"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  }
+}
