@@ -5,8 +5,57 @@
 
 export const API_VERSION: string
 export const API_BASE_URL: string
-export class WebSocket { }
+export const enum SnowflakeError {
+  InvalidBits = 0
+}
+export class WebSocket {
+  gatewayUrl: string
+}
 export class Client {
+  token?: string
   /** Initialize a new Discord client */
   constructor()
+  /**
+   * Login to Discord with a token
+   * Support only bot token
+   * Reference:
+   * https://discord.com/developers/docs/reference#authentication
+   */
+  login(token: string): Promise<void>
+  get token(): string | null
+}
+/**
+ * A Discord snowflake ID
+ * This information is unique to every Discord user
+ * Reference:
+ * https://discord.com/developers/docs/reference#snowflakes
+ *
+ * Example:
+ * ```rs
+ * let snowflake = Snowflake::from_bits(782164174821523467);
+ * ```
+ */
+export class Snowflake {
+  /** The raw ID */
+  raw: string
+  /**
+   * The timestamp of the ID
+   * 42 bits number based
+   */
+  timestamp: Date
+  /**
+   * The internal worker ID
+   * 5 bits
+   */
+  internalWorkerId: number
+  /**
+   * The internal process ID
+   * 5 bits
+   */
+  internalProcessId: number
+  /**
+   * Incremental for every ID generated on that process
+   * 12 bits
+   */
+  increment: number
 }

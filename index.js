@@ -252,9 +252,11 @@ if (!nativeBinding) {
   throw new Error(`Failed to load native binding`)
 }
 
-const { WebSocket, Client, API_VERSION, API_BASE_URL } = nativeBinding
+const { WebSocket, Client, API_VERSION, API_BASE_URL, Snowflake, SnowflakeError } = nativeBinding
 
 module.exports.WebSocket = WebSocket
 module.exports.Client = Client
 module.exports.API_VERSION = API_VERSION
 module.exports.API_BASE_URL = API_BASE_URL
+module.exports.Snowflake = Snowflake
+module.exports.SnowflakeError = SnowflakeError
